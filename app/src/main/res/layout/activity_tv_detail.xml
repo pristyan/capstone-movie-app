@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="tv"
+            type="com.aoc.capstone.model.view.Tv" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:navigationIcon="@drawable/ic_arrow_back_black_24dp"
+            app:title="@{tv.name}" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/srl_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_poster"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:background="@color/color_primary"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintDimensionRatio="1"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/container_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-48dp"
+                        android:background="@drawable/bg_movie_detail_content"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="@dimen/spacing_medium"
+                        app:layout_constraintTop_toBottomOf="@+id/img_poster">
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/spacing_xlarge" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="@{tv.name}"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_title"
+                            tools:text="Movie Title" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_tagline"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@{tv.tagline}"
+                            android:textSize="@dimen/text_small"
+                            tools:text="Movie overview." />
+
+                        <com.google.android.material.chip.ChipGroup
+                            android:id="@+id/cg_genre"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:chipSpacingVertical="0dp"
+                            app:itemSpacing="@dimen/spacing_normal" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_medium"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:text="Overview"
+                            android:textSize="@dimen/text_small" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_overview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_small"
+                            android:text="@{tv.overview}"
+                            android:textSize="@dimen/text_small"
+                            tools:text="Movie overview." />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_medium"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:text="First Air Date"
+                            android:textSize="@dimen/text_small" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_release_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_small"
+                            android:text="@{tv.parsedFirstAirDate}"
+                            android:textColor="@color/black"
+                            tools:text="Movie overview." />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_medium"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:text="Last Episode"
+                            android:textSize="@dimen/text_small" />
+
+                        <include
+                            android:id="@+id/container_last_episode"
+                            layout="@layout/item_episode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_small" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_medium"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:text="Next Episode"
+                            android:textSize="@dimen/text_small" />
+
+                        <include
+                            android:id="@+id/container_next_episode"
+                            layout="@layout/item_episode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_small" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_medium"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:text="Production Companies"
+                            android:textSize="@dimen/text_small" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_company"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:listitem="@layout/list_item_company" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/fab_favorite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/spacing_xlarge"
+                        android:src="@drawable/ic_favorite_grey_24dp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toTopOf="@+id/container_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/container_content"
+                        tools:ignore="ContentDescription" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

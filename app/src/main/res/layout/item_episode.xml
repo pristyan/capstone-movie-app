@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="episode"
+            type="com.aoc.capstone.model.view.Episode" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img_episode"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/RoundedImageView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_episode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_normal"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-medium"
+            android:maxLines="1"
+            android:text="@{episode.formattedEpisodeNumber}"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/img_episode"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Episode 2" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_episode_release"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_normal"
+            android:layout_marginTop="@dimen/spacing_normal"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{episode.formattedAirDate}"
+            android:textColor="@color/color_text_secondary"
+            android:textSize="@dimen/text_small"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_episode"
+            app:layout_constraintStart_toEndOf="@+id/tv_episode"
+            tools:text="(20/01/2000)" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_episode_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{episode.name}"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_episode"
+            app:layout_constraintTop_toBottomOf="@+id/tv_episode"
+            tools:text="Cintaku di Jalan buntu" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_episode_overview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{episode.overview}"
+            android:textSize="@dimen/text_small"
+            app:layout_constraintEnd_toEndOf="@+id/tv_episode_name"
+            app:layout_constraintStart_toStartOf="@+id/tv_episode_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_episode_name"
+            tools:text="Akhirnya kumenemukanmu lagi jongkok di ujung gang buntu" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

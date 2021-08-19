@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="listSize"
+            type="Integer" />
+
+        <variable
+            name="selectedMode"
+            type="Integer" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_arrow_back_black_24dp"
+            app:title="Favorite" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_height"
+            android:background="@color/color_divider"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/container_option"
+            android:layout_width="250dp"
+            android:layout_height="@dimen/spacing_xlarge"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:background="@drawable/bg_favorite_container"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_movie"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/spacing_small"
+                android:layout_weight="1"
+                android:background="@{selectedMode == 0 ? @drawable/bg_favorite_item : null}"
+                android:gravity="center"
+                android:text="Movie"
+                android:textColor="@{selectedMode == 0 ? @color/favorite_selected : @color/favorite_default}" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_series"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/spacing_small"
+                android:layout_weight="1"
+                android:background="@{selectedMode == 1 ? @drawable/bg_favorite_item : null}"
+                android:gravity="center"
+                android:text="TV Series"
+                android:textColor="@{selectedMode == 1 ? @color/favorite_selected : @color/favorite_default}" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_favorite"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/spacing_medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/container_option" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Empty List"
+            android:visibility="@{listSize > 0 ? View.GONE : View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

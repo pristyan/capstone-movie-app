@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_primary">#1FA8FF</color>
+    <color name="color_primary_dark">#0079cb</color>
+    <color name="color_primary_light">#70d9ff</color>
+    <color name="color_secondary">#ffeb3b</color>
+    <color name="color_secondary_dark">#c8b900</color>
+    <color name="color_secondary_light">#ffff72</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="color_divider">#e0e0e0</color>
+    <color name="color_text_secondary">#52575C</color>
+
+    <color name="color_transaction_detail_header_notes">#DDF2FF</color>
+
+    <color name="color_background_add_image">#e6e6e6</color>
+
+    <color name="color_button_primary">#1FA8FF</color>
+    <color name="color_button_primary_ripple">#0079cb</color>
+    <color name="color_button_primary_disabled">#e0e0e0</color>
+    <color name="color_text_on_button_primary">#FFFFFF</color>
+    <color name="color_text_on_button_primary_disabled">#757575</color>
+
+    <color name="color_button_secondary">#F9F9FA</color>
+    <color name="color_button_secondary_ripple">#AEAEAE</color>
+    <color name="color_text_on_button_secondary">#1FA8FF</color>
+
+    <color name="color_button_delete">#c4c4c4</color>
+
+    <color name="color_navigation_inactive">#A0A4A8</color>
+
+    <color name="color_switch_active">#35FF92</color>
+    <color name="color_switch_track_active">#00696B</color>
+</resources>
