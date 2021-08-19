@@ -16,6 +16,9 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
 
+        buildConfigField "String", "BASE_URL", BASE_URL
+        buildConfigField "String", "API_KEY", API_KEY
+
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments += [
@@ -28,15 +31,12 @@ android {
 
     buildTypes {
         debug {
-            debuggable true
-            buildConfigField "String", "BASE_URL", BASE_URL
-            buildConfigField "String", "API_KEY", API_KEY
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
 
         release {
-            buildConfigField "String", "BASE_URL", BASE_URL
-            buildConfigField "String", "API_KEY", API_KEY
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }

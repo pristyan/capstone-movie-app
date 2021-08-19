@@ -19,3 +19,11 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-keepattributes *Annotation*
+-keep class com.aoc.capstone.model.db.** { *; }
+-keep class com.aoc.capstone.model.entity.** { *; }
+-keep class com.aoc.capstone.model.view.** { *; }
+
+-keep,includedescriptorclasses class net.sqlcipher.** { *; }
+-keep,includedescriptorclasses interface net.sqlcipher.** { *; }
