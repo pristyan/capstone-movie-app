@@ -1,5 +1,7 @@
 # Movie App
+Movie catalogue app using api.themoviedb.org API
 
+#### CircleCI :
 [![CircleCI](https://circleci.com/gh/pristyan/capstone-movie-app/tree/master.svg?style=svg)](https://circleci.com/gh/pristyan/capstone-movie-app/tree/master)
 
 #### Features :
