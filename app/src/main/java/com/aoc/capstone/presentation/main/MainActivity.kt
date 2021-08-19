@@ -17,13 +17,6 @@ import javax.inject.Inject
 class MainActivity : BaseActivity<MainViewModel, MainViewModelContract, ActivityMainBinding>(),
     MainView {
 
-    override val pages: Map<Int, Pair<Fragment, String>> = mapOf(
-        R.id.movie_fragment to Pair(MovieListFragment(), "Movie"),
-        R.id.tv_fragment to Pair(TvListFragment(), "TV")
-    )
-
-    override var selectedPage: Pair<Fragment, String>? = pages[R.id.movie_fragment]
-
     @Inject
     override lateinit var viewModelProviderFactory: ViewModelProvider.Factory
 
@@ -50,11 +43,14 @@ class MainActivity : BaseActivity<MainViewModel, MainViewModelContract, Activity
 
     override fun initView() {
         binding.bottomNavigation.setOnItemSelectedListener {
-            selectedPage = pages[it.itemId]
-            selectedPage?.let { map -> setActivePage(map.first, map.second) }
-            selectedPage != null
+            when (it.itemId) {
+                R.id.movie_fragment -> setActivePage(MovieListFragment(), "Movie")
+                R.id.tv_fragment -> setActivePage(TvListFragment(), "TV")
+            }
+            true
         }
-        selectedPage?.let { setActivePage(it.first, it.second) }
+
+        setActivePage(MovieListFragment(), "Movie")
     }
 
     override fun setActivePage(fragment: Fragment, tag: String) {
@@ -67,4 +63,5 @@ class MainActivity : BaseActivity<MainViewModel, MainViewModelContract, Activity
         super.onCreate(savedInstanceState)
         initView()
     }
+
 }
