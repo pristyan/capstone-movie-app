@@ -89,7 +89,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/spacing_medium"
                             android:fontFamily="sans-serif-condensed-medium"
-                            android:text="Overview"
+                            android:text="@string/label_overview"
                             android:textSize="@dimen/text_small" />
 
                         <androidx.appcompat.widget.AppCompatTextView
@@ -106,7 +106,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/spacing_medium"
                             android:fontFamily="sans-serif-condensed-medium"
-                            android:text="Release Date"
+                            android:text="@string/label_release_date"
                             android:textSize="@dimen/text_small" />
 
                         <androidx.appcompat.widget.AppCompatTextView
@@ -123,7 +123,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/spacing_medium"
                             android:fontFamily="sans-serif-condensed-medium"
-                            android:text="Production Companies"
+                            android:text="@string/label_production_companies"
                             android:textSize="@dimen/text_small" />
 
                         <androidx.recyclerview.widget.RecyclerView

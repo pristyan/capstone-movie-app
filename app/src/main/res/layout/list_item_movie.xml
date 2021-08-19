@@ -83,7 +83,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_small"
                 android:fontFamily="sans-serif-condensed-medium"
-                android:text="Release date : "
+                android:text="@string/label_release_date"
                 android:textColor="@color/color_text_secondary"
                 android:textSize="@dimen/text_small"
                 app:layout_constraintStart_toStartOf="@+id/tv_overview"

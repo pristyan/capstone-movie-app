@@ -16,9 +16,7 @@ import com.aoc.capstone.presentation.moviedetail.viewmodel.MovieDetailViewModel
 import com.aoc.capstone.presentation.moviedetail.viewmodel.MovieDetailViewModelContract
 import com.aoc.core.base.activity.BaseActivity
 import com.aoc.core.util.loadImage
-import com.bumptech.glide.Glide
 import com.google.android.material.chip.Chip
-import com.google.android.material.chip.ChipGroup
 import javax.inject.Inject
 
 

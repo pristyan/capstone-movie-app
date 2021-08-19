@@ -56,7 +56,7 @@
                 android:layout_weight="1"
                 android:background="@{selectedMode == 0 ? @drawable/bg_favorite_item : null}"
                 android:gravity="center"
-                android:text="Movie"
+                android:text="@string/title_movie"
                 android:textColor="@{selectedMode == 0 ? @color/favorite_selected : @color/favorite_default}" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -67,7 +67,7 @@
                 android:layout_weight="1"
                 android:background="@{selectedMode == 1 ? @drawable/bg_favorite_item : null}"
                 android:gravity="center"
-                android:text="TV Series"
+                android:text="@string/title_tv_series"
                 android:textColor="@{selectedMode == 1 ? @color/favorite_selected : @color/favorite_default}" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -85,7 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Empty List"
+            android:text="@string/label_empty_list"
             android:visibility="@{listSize > 0 ? View.GONE : View.VISIBLE}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

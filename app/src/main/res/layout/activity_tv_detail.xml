@@ -91,7 +91,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/spacing_medium"
                             android:fontFamily="sans-serif-condensed-medium"
-                            android:text="Overview"
+                            android:text="@string/label_overview"
                             android:textSize="@dimen/text_small" />
 
                         <androidx.appcompat.widget.AppCompatTextView
@@ -108,7 +108,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/spacing_medium"
                             android:fontFamily="sans-serif-condensed-medium"
-                            android:text="First Air Date"
+                            android:text="@string/label_first_air_date"
                             android:textSize="@dimen/text_small" />
 
                         <androidx.appcompat.widget.AppCompatTextView
@@ -125,7 +125,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/spacing_medium"
                             android:fontFamily="sans-serif-condensed-medium"
-                            android:text="Last Episode"
+                            android:text="@string/label_last_episode"
                             android:textSize="@dimen/text_small" />
 
                         <include
@@ -140,7 +140,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/spacing_medium"
                             android:fontFamily="sans-serif-condensed-medium"
-                            android:text="Next Episode"
+                            android:text="@string/label_next_episode"
                             android:textSize="@dimen/text_small" />
 
                         <include
@@ -155,7 +155,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/spacing_medium"
                             android:fontFamily="sans-serif-condensed-medium"
-                            android:text="Production Companies"
+                            android:text="@string/label_production_companies"
                             android:textSize="@dimen/text_small" />
 
                         <androidx.recyclerview.widget.RecyclerView

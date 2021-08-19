@@ -1,4 +1,17 @@
 <resources>
-    <string name="app_name">Capstone</string>
+    <string name="app_name">Movie App</string>
+    <string name="app_tagline">MADE Submission</string>
     <string name="title_favorite">Favorite</string>
+    <string name="title_movie">Movie</string>
+    <string name="title_tv_series">TV Series</string>
+    <string name="label_empty_list">Empty List</string>
+    <string name="label_overview">Overview</string>
+    <string name="label_release_date">Release Date</string>
+    <string name="label_production_companies">Production Companies</string>
+    <string name="label_search_movie">Search Movie</string>
+    <string name="label_search_tv">Search TV Series</string>
+    <string name="label_content_not_found">Content not found</string>
+    <string name="label_first_air_date">First Air Date</string>
+    <string name="label_last_episode">Last Episode</string>
+    <string name="label_next_episode">Next Episode</string>
 </resources>

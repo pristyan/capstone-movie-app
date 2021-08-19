@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -35,8 +34,7 @@
             android:text="@{episode.formattedEpisodeNumber}"
             android:textColor="@color/black"
             app:layout_constraintStart_toEndOf="@+id/img_episode"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Episode 2" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_episode_release"
@@ -51,8 +49,7 @@
             android:textSize="@dimen/text_small"
             android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="@+id/tv_episode"
-            app:layout_constraintStart_toEndOf="@+id/tv_episode"
-            tools:text="(20/01/2000)" />
+            app:layout_constraintStart_toEndOf="@+id/tv_episode" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_episode_name"
@@ -66,8 +63,7 @@
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/img_episode"
-            app:layout_constraintTop_toBottomOf="@+id/tv_episode"
-            tools:text="Cintaku di Jalan buntu" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_episode" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_episode_overview"
@@ -79,8 +75,7 @@
             android:textSize="@dimen/text_small"
             app:layout_constraintEnd_toEndOf="@+id/tv_episode_name"
             app:layout_constraintStart_toStartOf="@+id/tv_episode_name"
-            app:layout_constraintTop_toBottomOf="@+id/tv_episode_name"
-            tools:text="Akhirnya kumenemukanmu lagi jongkok di ujung gang buntu" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_episode_name" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

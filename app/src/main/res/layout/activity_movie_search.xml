@@ -32,7 +32,7 @@
                 android:layout_marginEnd="@dimen/spacing_medium"
                 android:background="@drawable/bg_edt_search"
                 android:drawableEnd="@drawable/ic_search_black_24dp"
-                android:hint="Search Movie"
+                android:hint="@string/label_search_movie"
                 android:imeOptions="actionDone"
                 android:inputType="text"
                 android:paddingHorizontal="@dimen/spacing_medium"
@@ -74,7 +74,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:text="Content not found"
+                        android:text="@string/label_content_not_found"
                         android:visibility="@{listSize == 0 ? View.VISIBLE : View.GONE}" />
                 </RelativeLayout>
             </androidx.core.widget.NestedScrollView>
