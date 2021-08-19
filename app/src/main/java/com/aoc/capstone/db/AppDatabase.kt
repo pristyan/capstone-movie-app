@@ -12,7 +12,11 @@ import com.aoc.capstone.model.db.TvDbEntity
  * Created by Chandra.
  **/
 
-@Database(entities = [MovieDbEntity::class, TvDbEntity::class], version = DBConstant.VERSION)
+@Database(
+    entities = [MovieDbEntity::class, TvDbEntity::class],
+    version = DBConstant.VERSION,
+    exportSchema = false
+)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun movieDao(): MovieDao
