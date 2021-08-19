@@ -10,6 +10,7 @@ import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
+import okhttp3.CertificatePinner
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -43,11 +44,16 @@ object CoreModule {
         interceptor: Interceptor,
         chuckerInterceptor: ChuckerInterceptor
     ): OkHttpClient {
+        val certificate = CertificatePinner.Builder()
+            .add(BuildConfig.HOSTNAME, "sha256/+vqZVAzTqUP8BGkfl88yU7SQ3C8J2uNEa55B7RZjEg0=")
+            .build()
+
         val builder = OkHttpClient.Builder()
             .connectTimeout(CONNECTION_TIMEOUT, TimeUnit.SECONDS)
             .readTimeout(CONNECTION_TIMEOUT, TimeUnit.SECONDS)
             .writeTimeout(WRITE_TIMEOUT, TimeUnit.HOURS)
             .addInterceptor(interceptor)
+            .certificatePinner(certificate)
 
         if (BuildConfig.DEBUG) {
             builder.addNetworkInterceptor(chuckerInterceptor)
