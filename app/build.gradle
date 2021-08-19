@@ -48,6 +48,9 @@ dependencies {
 
     kapt "androidx.room:room-compiler:$room"
 
+    implementation "net.zetetic:android-database-sqlcipher:4.4.0"
+    implementation "androidx.sqlite:sqlite-ktx:2.1.0"
+
     testImplementation "junit:junit:$junit"
     androidTestImplementation "androidx.test.ext:junit:$android_junit_ext"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"

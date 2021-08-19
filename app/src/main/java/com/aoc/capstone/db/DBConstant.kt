@@ -6,5 +6,5 @@ package com.aoc.capstone.db
  **/
 object DBConstant {
     const val VERSION = 1
-    const val NAME = "movie_local_db"
+    const val NAME = "capstone_movie.db"
 }
